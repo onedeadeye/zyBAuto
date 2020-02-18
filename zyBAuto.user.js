@@ -83,6 +83,8 @@ function timeString() {
 }
 function textIn(){
     var checker = document.getElementsByClassName("show-answer-button");
+    var exp = document.getElementsByClassName("explanation");
+    var c = 0;
     for (var i = 0; i < checker.length; i++) {
         checker[i].click();
         checker[i].click();
@@ -90,7 +92,12 @@ function textIn(){
         var targText = document.getElementsByClassName("forfeit-answer");
         console.log(targText[i].textContent);
         var paster = document.getElementsByClassName("zb-text-area");
-        paster[i].value = targText[i].textContent;
+        paster[i].value = targText[c].textContent;
+        // if ((exp[i].nextElementSibling)!=null){
+        //     c++;}
+        if ((exp[i].innerHTML).includes("or")){
+            c++;}
+        c++;
     }
 }
 function multChoice(){
