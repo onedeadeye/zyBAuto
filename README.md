@@ -14,8 +14,8 @@ Quick script to automate some boring parts of zyBooks.
 ## Current Features:
 - Automates the "Click play and watch, then click play and watch..." questions.
 - Script autoupdates.
-
-## Planned Features?
 - Automate multiple choice questions.
 - Automate "Check Answer" questions.
+
+## Planned Features?
 - Automate drag and drop questions.
