@@ -37,7 +37,7 @@ function run() {
     click_starts();
     console.log("loop");
     if (o == 0){
-        //   textIn();
+        textIn();
         multChoice();
     }
     o= o +1;
@@ -82,8 +82,8 @@ function timeString() {
     return dstr;
 }
 function textIn(){
+    var qType = document.getElementsByClassName("question-set-question short-answer-question");
     var checker = document.getElementsByClassName("show-answer-button");
-    var exp = document.getElementsByClassName("explanation");
     var c = 0;
     var targText = document.getElementsByClassName("forfeit-answer");
     var paster = document.getElementsByClassName("zb-text-area");
@@ -93,9 +93,10 @@ function textIn(){
         checker[i].click();
         console.log(timeString() + " Clicked a get answer button.");
         console.log(targText[c].textContent);
+        var exp = document.getElementsByClassName("explanation has-explanation forfeit");
         paster[i].value = targText[c].textContent;
-        console.log((exp[i].getElementsByClassName("answers")[0].getElementsByClassName("or-text")).length);
-        var skips = exp[i].getElementsByClassName("answers")[0].getElementsByClassName("or-text").length;
+        var hold = exp[i].getElementsByClassName("answers")[0];
+        var skips = hold.getElementsByClassName("or-text").length;
         if (skips!=0){
             c=c+skips;
             c++;
@@ -112,15 +113,13 @@ function multChoice(){
     console.log(button.length);
     for (var b = 0; b < allQ.length; b++) {
         if(allQ[b].innerHTML.includes("Question completed")){
-            b++;
         }
         else{
-            console.log("here");
             var buttonQ = allQ[b].getElementsByClassName("zb-radio-button");
+            console.log(buttonQ.length);
             for(var c =0; c<buttonQ.length;c++){
-                buttonQ[c].click();
+                buttonQ[c].getElementsByTagName('input')[0].click();
             }
-            b++;
 
         }
     }
