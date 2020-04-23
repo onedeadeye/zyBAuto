@@ -10,6 +10,7 @@ Quick script to automate some boring parts of zyBooks.
 ## Tips
 - Press F12 and open your browser Console to read logs of zyBAuto, such as every click it makes.
 - To disable, you need to refresh by pressing `Ctrl+F5`.
+- Click the button when you get to a new assignment.
 
 ## Current Features:
 - Automates the "Click play and watch, then click play and watch..." questions.
