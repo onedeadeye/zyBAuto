@@ -20,7 +20,7 @@ var autoRun = false;
     if (autoRun) {
         run();
     } else {
-        document.getElementsByClassName('right-buttons')[0].innerHTML += '<button id="zbaButton" type="button">Autocomplete!</button>';
+        document.getElementsByClassName("right-buttons")[0].innerHTML += '<button id="zbaButton" type="button">Autocomplete!</button>';
         document.getElementById("zbaButton").addEventListener("click", zBAStartButton, false);
     }
 })();
@@ -33,8 +33,8 @@ function zBAStartButton(zEvent) {
 
 function run() {
     click_speeds();
-    multChoice();
     textIn();
+    multChoice();
   	other();
 }
 function other() {
@@ -83,10 +83,10 @@ function timeString() {
 }
 
 function textIn() {
-    var checker = document.getElementsByClassName("show-answer-button");
-    var targText = document.getElementsByClassName("forfeit-answer");
-    var checkButton = document.getElementsByClassName("check-button");
-    var paster = document.getElementsByClassName("zb-text-area");
+    var checker = document.getElementsByClassName("zb-button secondary false show-answer-button");
+    var targText = document.getElementsByClassName("forfeit-answer ");
+    var checkButton = document.getElementsByClassName("zb-button primary false raised check-button");
+    var paster = document.getElementsByClassName("ember-text-area ember-view zb-text-area hide-scrollbar");
   	var c = 0;
     for (var i = 0; i < checker.length; i++) {
       	console.log("on text loop " + i);
@@ -113,8 +113,8 @@ function textIn() {
 }
 
 function multChoice() {
-    var allQ = document.getElementsByClassName("question-set-question multiple-choice-question");
-    var button = allQ[0].getElementsByClassName("zb-radio-button");
+    var allQ = document.getElementsByClassName("question-set-question multiple-choice-question ember-view");
+    var button = allQ[0].getElementsByClassName("zb-radio-button orange orange ember-view");
     console.log(button.length);
     console.log(allQ.length);
     for (var b = 0; b < allQ.length; b++) {
